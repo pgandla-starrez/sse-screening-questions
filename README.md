@@ -47,12 +47,12 @@ STEP 5 → Fill Scorecard + make decision
 
 **Why this matters:** Filters out candidates who have used Laravel only on tutorials, side projects, or in a very junior/supporting capacity. Seniority requires ownership at real scale.
 
-| What you're listening for | What should concern you |
-|---------------------------|------------------------|
-| Names a real company/product (doesn't have to be public) | Only mentions personal/hobby projects |
-| Gives concrete scale signals — user numbers, traffic, team size | Says "we" for everything, can't describe their own contribution |
-| Describes evolution of the system over time, not just initial build | Claims 5+ years but only describes one small feature |
-| Shows they understand the business impact of what they built | Gets defensive or vague when asked follow-up questions |
+| What you're listening for | Key words | What should concern you |
+|---------------------------|-----------|------------------------|
+| Names a real company/product (doesn't have to be public) | production env, named employer, live system | Only mentions personal/hobby projects |
+| Gives concrete scale signals — user numbers, traffic, team size | DAU, RPM, QPS, concurrent users, team size | Says "we" for everything, can't describe their own contribution |
+| Describes evolution of the system over time, not just initial build | refactor, migration, scale-out, versioned API, greenfield→brownfield | Claims 5+ years but only describes one small feature |
+| Shows they understand the business impact of what they built | SLA, uptime %, error budget, revenue impact, MTTR | Gets defensive or vague when asked follow-up questions |
 
 **Follow-up if vague:** *"What was the single hardest technical decision you made on that project — and what would you do differently now?"*
 
@@ -65,14 +65,14 @@ STEP 5 → Fill Scorecard + make decision
 
 **Why this matters:** Seniority is proven under fire, not in ideal conditions. This question simultaneously tests debugging skills, methodical thinking, tooling knowledge, performance awareness, and ownership. A candidate who has never owned a production problem is not a senior engineer.
 
-| What you're listening for | What should concern you |
-|---------------------------|------------------------|
-| Describes a **structured triage process**: alerts/logs → hypothesis → isolation → fix — not random changes | Stumbles to recall any production incident they were personally involved in |
-| Names **specific tooling** used to investigate: Laravel Telescope, Xdebug, Blackfire, Sentry, Datadog, New Relic, MySQL slow query log | "I just checked the code and found it" — no systematic approach, no tooling |
-| Can identify the **root cause category**: N+1 query, memory leak, race condition, cache stampede, deadlock, queue backup, misconfigured index | Describes a very minor bug (typo, wrong variable) as their "worst incident" |
-| Describes a **performance angle** — e.g. a query that worked fine at low volume and only broke at scale | Only fixed the symptom; no follow-up to prevent recurrence |
-| Mentions **post-incident actions**: added monitoring/alerting, wrote a runbook, added a regression test, held a blameless post-mortem | Shows panic or blame rather than structured, calm problem-solving |
-| Gives **before/after metrics** if performance-related — query time, response time, error rate, queue depth | Cannot quantify the impact of the incident or the fix |
+| What you're listening for | Key words | What should concern you |
+|---------------------------|-----------|------------------------|
+| Describes a **structured triage process**: alerts/logs → hypothesis → isolation → fix — not random changes | on-call alert, triage, reproduce, isolate, rollback | Stumbles to recall any production incident they were personally involved in |
+| Names **specific tooling** used to investigate: Laravel Telescope, Xdebug, Blackfire, Sentry, Datadog, New Relic, MySQL slow query log | Telescope, Sentry, Datadog, New Relic, Xdebug, Blackfire, slow query log | "I just checked the code and found it" — no systematic approach, no tooling |
+| Can identify the **root cause category**: N+1 query, memory leak, race condition, cache stampede, deadlock, queue backup, misconfigured index | N+1, memory leak, deadlock, race condition, cache stampede, missing index | Describes a very minor bug (typo, wrong variable) as their "worst incident" |
+| Describes a **performance angle** — e.g. a query that worked fine at low volume and only broke at scale | p95/p99 latency, throughput degradation, load spike, query plan | Only fixed the symptom; no follow-up to prevent recurrence |
+| Mentions **post-incident actions**: added monitoring/alerting, wrote a runbook, added a regression test, held a blameless post-mortem | post-mortem, runbook, regression test, alert threshold, blameless review | Shows panic or blame rather than structured, calm problem-solving |
+| Gives **before/after metrics** if performance-related — query time, response time, error rate, queue depth | ms→ms delta, error rate %, MTTR, queue depth, throughput gain | Cannot quantify the impact of the incident or the fix |
 
 **Follow-up if vague:** *"What specific tool or log entry gave you the first clue about what was going wrong?"*
 
@@ -87,12 +87,12 @@ STEP 5 → Fill Scorecard + make decision
 
 **Why this matters:** The single most common failure mode for this hire is an engineer who privately considers PHP beneath them and will chafe against the codebase from day one. This question surfaces that attitude before it becomes a retention issue.
 
-| What you're listening for | What should concern you |
-|---------------------------|------------------------|
-| Expresses genuine comfort or interest in established codebases | Says "I prefer greenfield" without any caveat |
-| Talks about the *value* of understanding an existing system before changing it | Makes comments like "PHP is outdated" or "I'd want to rewrite everything" |
-| Has a real example of improving or navigating a legacy codebase | Shows impatience or dismissiveness when you describe the stack |
-| Mentions the 20% Node.js as a plus, not as the only reason they applied | Only excited about the Node.js portion; treats PHP as a burden to endure |
+| What you're listening for | Key words | What should concern you |
+|---------------------------|-----------|------------------------|
+| Expresses genuine comfort or interest in established codebases | brownfield, inherited codebase, legacy system, production codebase | Says "I prefer greenfield" without any caveat |
+| Talks about the *value* of understanding an existing system before changing it | code archaeology, domain knowledge, intent, read before write | Makes comments like "PHP is outdated" or "I'd want to rewrite everything" |
+| Has a real example of improving or navigating a legacy codebase | characterisation tests, strangler fig, incremental refactor, seam | Shows impatience or dismissiveness when you describe the stack |
+| Mentions the 20% Node.js as a plus, not as the only reason they applied | polyglot, complementary stack, full-stack, both sides | Only excited about the Node.js portion; treats PHP as a burden to endure |
 
 **Follow-up if attitude seems off:** *"If the role ended up being 90% PHP and only 10% Node.js, would that change your interest?"*
 
@@ -113,11 +113,11 @@ STEP 5 → Fill Scorecard + make decision
 
 **Why this matters:** Seniority means owning decisions, not just implementing them. This question reveals whether the candidate can reason about trade-offs, communicate choices, and learn from outcomes — all critical for someone who will influence a mature, high-traffic codebase.
 
-| ✅ Listen for | ⚠️ Flag if | ❌ Stop if |
-|--------------|-----------|-----------|
-| Describes trade-offs explicitly (performance vs. maintainability, speed vs. correctness, flexibility vs. simplicity) | Can describe a design decision but only from a single angle | "Someone else made that call" — cannot name a decision they personally owned |
-| Considered non-technical factors: team capability, time constraints, future extensibility | Has strong opinions but has never had to defend or document them to others | Has only ever implemented decisions handed down by others |
-| Shows honest awareness of the risks or downsides of their choice | Treats their chosen solution as objectively correct with no acknowledged trade-offs | Cannot articulate a concrete alternative they evaluated and rejected |
+| ✅ Listen for | Key words | ⚠️ Flag if | ❌ Stop if |
+|--------------|-----------|-----------|----------|
+| Describes trade-offs explicitly (performance vs. maintainability, speed vs. correctness, flexibility vs. simplicity) | coupling, cohesion, latency vs consistency, SOLID, CAP theorem | Can describe a design decision but only from a single angle | "Someone else made that call" — cannot name a decision they personally owned |
+| Considered non-technical factors: team capability, time constraints, future extensibility | cognitive load, bus factor, YAGNI, ADR, extensibility | Has strong opinions but has never had to defend or document them to others | Has only ever implemented decisions handed down by others |
+| Shows honest awareness of the risks or downsides of their choice | technical debt, risk register, ADR, rollback plan, known limitation | Treats their chosen solution as objectively correct with no acknowledged trade-offs | Cannot articulate a concrete alternative they evaluated and rejected |
 
 **Follow-up:** *"Looking back, was it the right call? What would you do differently now?"*
 
@@ -128,11 +128,11 @@ STEP 5 → Fill Scorecard + make decision
 
 **Ask:** *"Walk me through a time you identified and fixed a performance problem in a PHP application or database query. What was the impact before and after?"*
 
-| ✅ Listen for | ⚠️ Flag if | ❌ Stop if |
-|--------------|-----------|-----------|
-| **Starts with measurement** — they profiled or queried logs before fixing | Jumps straight to "I added caching" with no explanation of how they found the problem | Cannot describe a single performance fix |
-| Names specific techniques: eager loading, indexing, caching, queue offloading | Answer is very high-level / theoretical with no concrete numbers | Has never worked on a performance issue |
-| Gives before/after numbers (query time, page load, throughput) | Can describe the fix but not the root cause | Confuses performance with just "making code cleaner" |
+| ✅ Listen for | Key words | ⚠️ Flag if | ❌ Stop if |
+|--------------|-----------|-----------|----------|
+| **Starts with measurement** — they profiled or queried logs before fixing | EXPLAIN / EXPLAIN ANALYZE, Blackfire flame graph, slow query log, APM trace | Jumps straight to "I added caching" with no explanation of how they found the problem | Cannot describe a single performance fix |
+| Names specific techniques: eager loading, indexing, caching, queue offloading | eager loading, covering index, Redis, queue offload, DB connection pool | Answer is very high-level / theoretical with no concrete numbers | Has never worked on a performance issue |
+| Gives before/after numbers (query time, page load, throughput) | p99 latency, TPS, query execution time ms, cache hit rate, TTFB | Can describe the fix but not the root cause | Confuses performance with just "making code cleaner" |
 
 **Follow-up:** *"How did you confirm the fix actually worked and didn't introduce a regression?"*
 
@@ -143,11 +143,11 @@ STEP 5 → Fill Scorecard + make decision
 
 **Ask:** *"What does your testing setup look like in a typical PHP/Laravel project? What types of tests do you write, and how are they hooked into your CI pipeline?"*
 
-| ✅ Listen for | ⚠️ Flag if | ❌ Stop if |
-|--------------|-----------|-----------|
-| Distinguishes unit tests, feature/integration tests, and E2E | Only mentions unit tests or only mentions manual QA | Has never written automated tests |
-| Names PHPUnit or Pest; mentions Laravel's HTTP testing | Knows the concepts but hasn't set up a pipeline themselves | Testing is treated as optional or someone else's job |
-| Describes CI gates — tests must pass before merging | Has written tests but they're not run automatically | "QA handles that" with no personal involvement |
+| ✅ Listen for | Key words | ⚠️ Flag if | ❌ Stop if |
+|--------------|-----------|-----------|----------|
+| Distinguishes unit tests, feature/integration tests, and E2E | unit, feature test, integration test, E2E, Dusk, Cypress, test pyramid | Only mentions unit tests or only mentions manual QA | Has never written automated tests |
+| Names PHPUnit or Pest; mentions Laravel's HTTP testing | PHPUnit, Pest, actingAs(), assertStatus(), RefreshDatabase, HTTP test | Knows the concepts but hasn't set up a pipeline themselves | Testing is treated as optional or someone else's job |
+| Describes CI gates — tests must pass before merging | GitHub Actions, GitLab CI, required status checks, branch protection, test gate | Has written tests but they're not run automatically | "QA handles that" with no personal involvement |
 
 **Follow-up:** *"What's a type of code that's notoriously hard to test, and how do you handle it?"*
 
@@ -158,11 +158,11 @@ STEP 5 → Fill Scorecard + make decision
 
 **Ask:** *"Tell me about a complex database schema you've designed. How did you handle schema migrations on a live, running system without downtime?"*
 
-| ✅ Listen for | ⚠️ Flag if | ❌ Stop if |
-|--------------|-----------|-----------|
-| Mentions backward-compatible migrations (add column before removing old one) | Has run migrations but never on a live system under traffic | Has only ever run migrations in development |
-| Aware of risks: locking, long-running queries, foreign key constraints | Knows the theory but no real production migration story | Claims senior experience but has never thought about zero-downtime deploys |
-| Understands indexing trade-offs (read vs. write performance) | Treats all migrations as the same regardless of risk | |
+| ✅ Listen for | Key words | ⚠️ Flag if | ❌ Stop if |
+|--------------|-----------|-----------|----------|
+| Mentions backward-compatible migrations (add column before removing old one) | expand/contract pattern, shadow column, zero-downtime deploy, rolling migration | Has run migrations but never on a live system under traffic | Has only ever run migrations in development |
+| Aware of risks: locking, long-running queries, foreign key constraints | DDL lock, ALTER TABLE lock, pt-online-schema-change, gh-ost, FK constraint | Knows the theory but no real production migration story | Claims senior experience but has never thought about zero-downtime deploys |
+| Understands indexing trade-offs (read vs. write performance) | covering index, composite index, cardinality, write amplification, EXPLAIN | Treats all migrations as the same regardless of risk | |
 
 **Follow-up:** *"What would you do differently if a migration needed to change a column that had millions of rows?"*
 
@@ -173,11 +173,11 @@ STEP 5 → Fill Scorecard + make decision
 
 **Ask:** *"Walk me through how your last team handled code reviews and branching. What made a PR get rejected?"*
 
-| ✅ Listen for | ⚠️ Flag if | ❌ Stop if |
-|--------------|-----------|-----------|
-| Describes a real review culture — not just rubber-stamping | Reviews happened but were mostly style/nitpick focused | "We pushed directly to main" or no PR culture |
-| Can give a specific example of a PR they rejected or that was rejected and why | Has done reviews but never enforced a standard | Review was a formality with no real gate |
-| Mentions CI checks, static analysis (PHPStan, Psalm, Laravel Pint) | Relies only on human review, no automated checks | |
+| ✅ Listen for | Key words | ⚠️ Flag if | ❌ Stop if |
+|--------------|-----------|-----------|----------|
+| Describes a real review culture — not just rubber-stamping | protected branch, CODEOWNERS, required reviewers, changes requested | Reviews happened but were mostly style/nitpick focused | "We pushed directly to main" or no PR culture |
+| Can give a specific example of a PR they rejected or that was rejected and why | blocking review, logic flaw, security vulnerability, race condition caught | Has done reviews but never enforced a standard | Review was a formality with no real gate |
+| Mentions CI checks, static analysis (PHPStan, Psalm, Laravel Pint) | PHPStan level 8, Psalm, Laravel Pint, pre-commit hook, static analysis CI gate | Relies only on human review, no automated checks | |
 
 ---
 
@@ -188,12 +188,12 @@ STEP 5 → Fill Scorecard + make decision
 
 > **Recruiter note:** You are NOT testing for expertise here. You are testing for **honesty and growth mindset**. A candidate who says "Node 6, TypeScript 5, React 4 — here's what I've done and here's how I'd close the gap" is far more valuable than one who claims across-the-board 9s and then stumbles on a follow-up.
 
-| ✅ Listen for | ⚠️ Flag if | ❌ Stop if |
-|--------------|-----------|-----------|
-| Honest, differentiated self-ratings with concrete reasoning for each area | Claims high proficiency across the board but can only describe basic CRUD APIs or tutorial-level React | Dismisses the Node.js/TypeScript/React work as irrelevant or refuses to engage with learning it |
-| Describes real async patterns in Node.js: promises, async/await, event-driven code | Equates "I've used npm" or "I've written a few React components" with meaningful proficiency | Claims expert level but cannot describe what the event loop does or what TypeScript generics are for when probed |
-| For TypeScript: distinguishes between using types for basic annotations vs. leveraging the type system (generics, utility types, discriminated unions) | Self-ratings with no supporting evidence either way | |
-| Shows a concrete plan or genuine enthusiasm for closing any gap | | |
+| ✅ Listen for | Key words | ⚠️ Flag if | ❌ Stop if |
+|--------------|-----------|-----------|----------|
+| Honest, differentiated self-ratings with concrete reasoning for each area | differentiated ratings, commercial project, shipped to prod | Claims high proficiency across the board but can only describe basic CRUD APIs or tutorial-level React | Dismisses the Node.js/TypeScript/React work as irrelevant or refuses to engage with learning it |
+| Describes real async patterns in Node.js: promises, async/await, event-driven code | event loop, libuv, Promise.all, async/await, EventEmitter, streams, non-blocking I/O | Equates "I've used npm" or "I've written a few React components" with meaningful proficiency | Claims expert level but cannot describe what the event loop does or what TypeScript generics are for when probed |
+| For TypeScript: distinguishes between using types for basic annotations vs. leveraging the type system (generics, utility types, discriminated unions) | generics, utility types (Partial/Pick/Omit), discriminated union, mapped types, infer | Self-ratings with no supporting evidence either way | |
+| Shows a concrete plan or genuine enthusiasm for closing any gap | side project, open source contribution, targeted course, deliberate practice | | |
 
 **Follow-up if they claim high Node.js proficiency:** *"What's the difference between Node.js's concurrency model and PHP's, and when would you choose one over the other?"* *(You don't need to know the answer — you're listening for confidence and depth.)*
 
@@ -206,12 +206,12 @@ STEP 5 → Fill Scorecard + make decision
 
 **Ask:** *"What are the top security risks you actively guard against when building PHP APIs, and can you give me a real example of catching or fixing a vulnerability?"*
 
-| ✅ Listen for | ⚠️ Flag if | ❌ Stop if |
-|--------------|-----------|-----------|
-| Names specific vulnerabilities: SQL injection, XSS, CSRF, mass assignment, IDOR (Insecure Direct Object Reference), broken authentication | Gives only generic "security is important" statements | Has never thought about security at code level |
-| Knows Laravel's built-in protections AND their limits (e.g. Eloquent doesn't make you immune to mass assignment if `$guarded` is misused; CSRF middleware doesn't cover stateless APIs) | Relies entirely on "Laravel handles it automatically" | Cannot name a single vulnerability type |
-| For APIs specifically: mentions authentication token hygiene, rate limiting, input validation at the boundary, and avoiding over-exposing data in responses | Theoretical knowledge only, no real example | |
-| Has a real story — something caught in a review, audit, or pen test | | |
+| ✅ Listen for | Key words | ⚠️ Flag if | ❌ Stop if |
+|--------------|-----------|-----------|----------|
+| Names specific vulnerabilities: SQL injection, XSS, CSRF, mass assignment, IDOR (Insecure Direct Object Reference), broken authentication | SQLi, XSS, CSRF, mass assignment, IDOR, broken auth, OWASP Top 10 | Gives only generic "security is important" statements | Has never thought about security at code level |
+| Knows Laravel's built-in protections AND their limits (e.g. Eloquent doesn't make you immune to mass assignment if `$guarded` is misused; CSRF middleware doesn't cover stateless APIs) | `$fillable`, `$guarded`, CSRF middleware, Sanctum, stateless API, prepared statement | Relies entirely on "Laravel handles it automatically" | Cannot name a single vulnerability type |
+| For APIs specifically: mentions authentication token hygiene, rate limiting, input validation at the boundary, and avoiding over-exposing data in responses | throttle middleware, JWT expiry, token rotation, API resource, input sanitisation | Theoretical knowledge only, no real example | |
+| Has a real story — something caught in a review, audit, or pen test | pen test, security audit, CVE, code review finding, vulnerability disclosure | | |
 
 ---
 
@@ -224,11 +224,11 @@ STEP 5 → Fill Scorecard + make decision
 
 **Ask:** *"Imagine you join and the first thing you're asked to do is add a feature to a part of the codebase you find messy or poorly structured. What's your approach?"*
 
-| ✅ Listen for | ⚠️ Flag if | ❌ Stop if |
-|--------------|-----------|-----------|
-| Talks about understanding the code's intent before judging it | Immediately talks about rewriting it | "I'd refuse to touch it until it was cleaned up" |
-| Balances delivering the feature with incremental improvement (boy scout rule) | Would deliver the feature but ignore any improvement opportunity | Shows contempt for existing code or past engineers |
-| Raises the trade-off conversation with the team/product owner | Would spend weeks refactoring without aligning with stakeholders | |
+| ✅ Listen for | Key words | ⚠️ Flag if | ❌ Stop if |
+|--------------|-----------|-----------|----------|
+| Talks about understanding the code's intent before judging it | code archaeology, characterisation tests, domain intent, read-first | Immediately talks about rewriting it | "I'd refuse to touch it until it was cleaned up" |
+| Balances delivering the feature with incremental improvement (boy scout rule) | boy scout rule, strangler fig, facade/wrapper, seam, incremental refactor | Would deliver the feature but ignore any improvement opportunity | Shows contempt for existing code or past engineers |
+| Raises the trade-off conversation with the team/product owner | tech debt backlog, risk flag, stakeholder alignment, definition of done | Would spend weeks refactoring without aligning with stakeholders | |
 
 ---
 
@@ -237,11 +237,11 @@ STEP 5 → Fill Scorecard + make decision
 
 **Ask:** *"Why does this specific role appeal to you — not just the company, but the nature of the work: a mature PHP product, gradual modernisation, high-traffic scale?"*
 
-| ✅ Listen for | ⚠️ Flag if | ❌ Stop if |
-|--------------|-----------|-----------|
-| Articulates genuine interest in ownership, scale, or impact | Generic answer about "exciting technology" or "career growth" | Only interested because of the Node.js/TypeScript 20% |
-| Has done research on the product or company | Has not looked at what the product does | Sees the role as a stepping stone to something "better" |
-| Can describe what they'd contribute, not just what they'd get | Focuses entirely on what they want to learn | Treats PHP at this scale as beneath their ambitions |
+| ✅ Listen for | Key words | ⚠️ Flag if | ❌ Stop if |
+|--------------|-----------|-----------|----------|
+| Articulates genuine interest in ownership, scale, or impact | DRI, on-call, production ownership, high-traffic, long-term roadmap | Generic answer about "exciting technology" or "career growth" | Only interested because of the Node.js/TypeScript 20% |
+| Has done research on the product or company | named product feature, customer segment, vertical, competitor awareness | Has not looked at what the product does | Sees the role as a stepping stone to something "better" |
+| Can describe what they'd contribute, not just what they'd get | domain transfer, value-add, prior pattern, specific improvement | Focuses entirely on what they want to learn | Treats PHP at this scale as beneath their ambitions |
 
 ---
 
