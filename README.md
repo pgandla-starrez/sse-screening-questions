@@ -6,7 +6,7 @@
 
 ```
 STEP 1 → Run Pre-Screen Checklist (2 min)   — hard eliminators, ask before anything else
-STEP 2 → Ask Knockout Questions Q1–Q3       — any ❌ = end screen + do not advance
+STEP 2 → Ask Knockout Questions Q1–Q3       — any No = end call + do not advance
 STEP 3 → Ask Core Questions Q4–Q10          — score each, note gaps for technical panel
 STEP 4 → Ask Closing Questions Q11–Q12      — assess mindset and fit
 STEP 5 → Fill Scorecard + make decision
@@ -245,24 +245,6 @@ STEP 5 → Fill Scorecard + make decision
 
 ---
 
-## STEP 5 — Scorecard
-
-> Complete this immediately after the call while memory is fresh.
-
-**Candidate name:** _________________________ &nbsp;&nbsp; **Date:** _______________ &nbsp;&nbsp; **Interviewer:** ___________________
-
-### Pre-Screen Gates
-| Gate | Pass ✅ | Fail ❌ |
-|------|--------|--------|
-| 5+ years commercial experience | | |
-| PHP/Laravel production experience | | |
-| Right to work / eligibility | | |
-| Notice period acceptable | | |
-
-> **If any gate = ❌, do not proceed. Mark as "Screen Fail – Eligibility."**
-
----
-
 ### Knockout Questions
 | # | Question | Score | Key evidence heard |
 |---|----------|-------|--------------------|
@@ -300,21 +282,20 @@ STEP 5 → Fill Scorecard + make decision
 ## Decision Framework
 
 ```
-All 4 Pre-Screen gates = Pass?          → NO  = Screen Fail – Eligibility
+All Pre-Screen gates = Pass?          → NO  = Screen Fail – Eligibility
 Any Knockout (Q1–Q3) = ❌?             → YES = Screen Fail – Seniority/Fit
 Q3 attitude = ❌ (dismissive of PHP)?  → YES = Screen Fail – Culture Fit (hard rule)
 
-Core score 6–7 ✅ + Closing ✅✅       → STRONG ADVANCE — fast-track technical round
-Core score 4–5 ✅ + Closing ✅         → CONDITIONAL ADVANCE — share flagged gaps with technical panel
-Core score 3 ✅ or fewer               → HOLD — discuss with hiring manager before advancing
+Core score 6–7  + Closing       → STRONG ADVANCE — fast-track technical round
+Core score 4–5  + Closing       → CONDITIONAL ADVANCE — share flagged gaps with technical panel
+Core score 3 or fewer           → HOLD — discuss with hiring manager before advancing
 ```
 
 | Decision | Next action |
 |----------|-------------|
-| **Strong Advance** | Book technical round; no special notes needed |
+| **Strong Advance** | Book technical round |
 | **Conditional Advance** | Book technical round; send "areas to probe" note to technical interviewer |
-| **Hold** | Discuss with hiring manager — may suit a different level or team |
-| **Screen Fail** | Send rejection; log reason for pipeline reporting |
+| **Hold** | Discuss with hiring manager |
 
 ---
 
@@ -338,5 +319,3 @@ Core score 3 ✅ or fewer               → HOLD — discuss with hiring manager
 | Q12 | Motivation | Excited about ownership at scale in PHP | Only here for the Node.js work |
 
 ---
-
-*Role: Senior Software Engineer · Stack: PHP/Laravel (80%) + Node.js/TypeScript (20%) · Last updated: March 2026*
