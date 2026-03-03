@@ -36,7 +36,7 @@ STEP 5 → Fill Scorecard + make decision
 
 ## STEP 2 — Knockout Questions (Any ❌ = Do Not Advance)
 
-> These three questions are your strongest filters. A weak answer here means the candidate does not meet the seniority bar — do not be tempted to advance anyway.
+> These three questions are your strongest filters. A weak answer here means the candidate does not meet the seniority bar.
 
 ---
 
