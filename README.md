@@ -1,12 +1,5 @@
 # Senior Software Engineer — Recruiter Screening Guide
 
-## Role Context (Read Before the Call)
-
-> **Product stack:** ~80% PHP / Laravel · ~20% Node.js · TypeScript · React · MySQL · MongoDB
-> **What we're hiring for:** A senior engineer who is strong in PHP/Laravel today, intellectually honest about their Node.js depth, and genuinely enthusiastic about evolving the stack — not someone chasing a trendier job title.
-> **Screen duration:** 30–45 minutes
-> **Your job as recruiter:** You do NOT need to validate technical correctness. You need to listen for *specificity*, *ownership language*, and *honesty*. Vague, generic answers = weak signal regardless of the topic.
-
 ---
 
 ## How to Use This Guide
@@ -19,9 +12,13 @@ STEP 4 → Ask Closing Questions Q11–Q12      — assess mindset and fit
 STEP 5 → Fill Scorecard + make decision
 ```
 
-**Score key:** ✅ Strong — candidate gave a specific, confident answer with real examples
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⚠️ Partial — answered but was vague, generic, or hedged too much
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ❌ Weak — could not answer, gave a textbook definition only, or showed a red flag
+**Score key:** 
+
+✅ Strong — candidate gave a specific, confident answer with real examples
+
+⚠️ Partial — answered but was vague, generic, or hedged too much
+
+❌ Weak — could not answer, gave a textbook definition only, or showed a red flag
 
 ---
 
@@ -34,17 +31,16 @@ STEP 5 → Fill Scorecard + make decision
 | **Years of experience** | "This role requires 5+ years of commercial software development. Can you confirm your total years of paid professional experience building production software?" | Confirms 5+ years | < 5 years or only freelance/side projects |
 | **PHP production experience** | "This is primarily a PHP/Laravel role — roughly 80% of the codebase. Have you worked with PHP and Laravel in a commercial production environment?" | Yes, with specifics | No PHP experience or only personal projects |
 | **Right to work / location** | *(insert your org's standard eligibility check)* | Eligible | Not eligible |
-| **Notice period / availability** | "What's your current notice period, and when could you start?" | Within acceptable range | Immediate blocker |
 
 ---
 
-## STEP 2 — Knockout Questions (🔴 Any ❌ = Do Not Advance)
+## STEP 2 — Knockout Questions (Any ❌ = Do Not Advance)
 
 > These three questions are your strongest filters. A weak answer here means the candidate does not meet the seniority bar — do not be tempted to advance anyway.
 
 ---
 
-### 🔴 Q1 — Real PHP/Laravel Production Experience
+### Q1 — Real PHP/Laravel Production Experience
 **Time budget: ~5 min**
 
 **Ask:** *"Tell me about a PHP or Laravel application you've personally owned or had significant responsibility for. How large was the codebase, how many users did it serve, and what was your specific role?"*
@@ -62,7 +58,7 @@ STEP 5 → Fill Scorecard + make decision
 
 ---
 
-### 🔴 Q2 — Production Incident, Debugging & Performance Under Pressure
+### Q2 — Production Incident, Debugging & Performance Under Pressure
 **Time budget: ~5 min**
 
 **Ask:** *"Tell me about the worst production incident you've been directly involved in on a PHP or Laravel application. Walk me through how you detected it, how you diagnosed the root cause, and what you did to resolve it and prevent recurrence."*
@@ -84,7 +80,7 @@ STEP 5 → Fill Scorecard + make decision
 
 ---
 
-### 🔴 Q3 — Tech Stack Adaptability (Attitude Filter)
+### Q3 — Tech Stack Adaptability (Attitude Filter)
 **Time budget: ~4 min**
 
 **Ask:** *"This role is 80% PHP/Laravel in a mature, established codebase — not a greenfield rewrite. How do you feel about that, and what's your experience working in existing codebases rather than starting fresh?"*
@@ -100,11 +96,11 @@ STEP 5 → Fill Scorecard + make decision
 
 **Follow-up if attitude seems off:** *"If the role ended up being 90% PHP and only 10% Node.js, would that change your interest?"*
 
-> **⛔ Hard rule:** A dismissive or negative attitude toward PHP/Laravel here = **automatic Do Not Advance**, regardless of how strong they are technically. We cannot train someone out of that mindset.
+> **Hard rule:** A dismissive or negative attitude toward PHP/Laravel here = **automatic Do Not Advance**, regardless of how strong they are technically. We cannot train someone out of that mindset.
 
 ---
 
-## STEP 3 — Core Questions (🟡 Score Each, Flag Gaps)
+## STEP 3 — Core Questions (Score Each, Flag Gaps)
 
 > Score each question. Partial answers (⚠️) are acceptable here — flag them for the technical panel to probe deeper.
 
@@ -219,7 +215,7 @@ STEP 5 → Fill Scorecard + make decision
 
 ---
 
-## STEP 4 — Closing Questions (🟢 Mindset & Fit)
+## STEP 4 — Closing Questions (Mindset & Fit)
 
 ---
 
